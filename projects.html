@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Roshan Mandal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 8px 25px;
+            border-radius: 25px;
+            border: 1px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .project-thumb {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            overflow: hidden;
+            position: relative;
+        }
+        .project-thumb::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(45, 106, 79, 0.2), transparent);
+            pointer-events: none;
+        }
+        .project-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+            filter: saturate(1.2) contrast(1.1);
+        }
+        .project-card:hover .project-thumb img { transform: scale(1.1); }
+        .project-body { padding: 25px; }
+        .project-body h3 { margin-bottom: 10px; color: var(--primary-color); }
+        .project-body p { font-size: 0.95rem; margin-bottom: 20px; color: var(--text-color); opacity: 0.8; }
+        .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+        .tag {
+            font-size: 0.75rem;
+            background: rgba(45, 106, 79, 0.1);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-weight: 600;
+        }
+        .project-links { display: flex; gap: 15px; }
+        .project-links a { font-size: 0.9rem; font-weight: 600; color: var(--primary-color); display: flex; align-items: center; gap: 5px; }
+        .project-links a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body data-theme="light">
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container section" style="padding-top: 120px;">
+        <div class="section-title fade-in">
+            <h2>My Projects</h2>
+            <p>Showcasing academic and personal work in Geomatics</p>
+            <div class="underline"></div>
+        </div>
+
+        <div class="filter-container fade-in">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="gis">GIS</button>
+            <button class="filter-btn" data-filter="rs">Remote Sensing</button>
+            <button class="filter-btn" data-filter="surveying">Surveying</button>
+            <button class="filter-btn" data-filter="web">WebGIS</button>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Project 1: Flood Susceptibility Mapping -->
+            <div class="project-card fade-in" data-category="gis">
+                <div class="project-thumb">
+                    <img src="images/flood_mapping.jpg" alt="Flood Susceptibility Mapping">
+                </div>
+                <div class="project-body">
+                    <h3>Flood Susceptibility Mapping</h3>
+                    <p>GIS-based flood susceptibility mapping using MCDA and Sensitivity Analysis to identify high-risk zones.</p>
+                    <div class="project-tags">
+                        <span class="tag">MCDA</span>
+                        <span class="tag">GIS</span>
+                        <span class="tag">Sensitivity Analysis</span>
+                    </div>
+                    <div class="project-links">
+
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Wildlife Corridor Analysis -->
+            <div class="project-card fade-in" data-category="gis">
+                <div class="project-thumb">
+                    <img src="images/wildlife_corridor.jpg" alt="Wildlife Corridor Analysis">
+                </div>
+                <div class="project-body">
+                    <h3>Wildlife Corridor Analysis</h3>
+                    <p>GIS-based analysis for wildlife corridor connectivity for Lions in the Serengeti-Mara Ecosystem using spatial modelling.</p>
+                    <div class="project-tags">
+                        <span class="tag">Wildlife</span>
+                        <span class="tag">GIS</span>
+                        <span class="tag">Serengeti</span>
+                        <span class="tag">Spatial Analysis</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: NDVI Analysis -->
+            <div class="project-card fade-in" data-category="rs">
+                <div class="project-thumb">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt="NDVI Analysis Dashboard">
+                </div>
+                <div class="project-body">
+                    <h3>NDVI Analysis</h3>
+                    <p>Time-series vegetation health monitoring using Google Earth Engine API.</p>
+                    <div class="project-tags">
+                        <span class="tag">GEE</span>
+                        <span class="tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: GPS Survey Network -->
+            <div class="project-card fade-in" data-category="surveying">
+                <div class="project-thumb">
+                    <img src="images/gps_survey.jpg" alt="GPS Survey Network">
+                </div>
+                <div class="project-body">
+                    <h3>GPS Survey Network</h3>
+                    <p>Establishment of a high-precision control network for a 50-hectare site.</p>
+                    <div class="project-tags">
+                        <span class="tag">GNSS</span>
+                        <span class="tag">Topcon</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: Interactive Web Map -->
+            <div class="project-card fade-in" data-category="web">
+                <div class="project-thumb">
+                    <img src="images/web_map.jpg" alt="Interactive Web Map">
+                </div>
+                <div class="project-body">
+                    <h3>Interactive Web Map</h3>
+                    <p>Building a custom WebGIS portal using Leaflet.js and GeoJSON data.</p>
+                    <div class="project-tags">
+                        <span class="tag">Leaflet JS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Actions -->
+    <div class="floating-actions">
+        <a href="Roshan_Mandal_CV.pdf" download class="floating-cv" title="Download CV">
+            <i class="fas fa-file-download"></i>
+        </a>
+        <div class="back-to-top" id="back-to-top" title="Back to Top">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Project Filtering Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

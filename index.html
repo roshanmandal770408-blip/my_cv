@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roshan Mandal | Geomatics Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-theme="light">
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-grid-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text fade-in">
+                    <h1>Hi, I'm <span style="color: var(--primary-color);">Roshan Mandal</span></h1>
+                    <div class="typing-text" id="typing-text"></div>
+                    <p>Building the world with spatial data and precision. Aspiring Geomatics Engineer passionate about GIS, Remote Sensing, and Surveying.</p>
+                    <div class="cta-buttons">
+                        <a href="projects.html" class="btn btn-primary">View My Work</a>
+                        <a href="Roshan_Mandal_CV.pdf" download class="btn btn-secondary">Download CV</a>
+                    </div>
+                </div>
+                <div class="hero-image fade-in">
+                    <div class="profile-frame">
+                        <img src="images/profile.jpg" alt="Roshan Mandal - Profile Photo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What I Do Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>What I Do</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>GIS & Mapping</h3>
+                    <p>Expertise in spatial analysis, cartography, and geodatabase management using ArcGIS and QGIS.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <i class="fas fa-satellite"></i>
+                    <h3>Remote Sensing</h3>
+                    <p>Processing satellite imagery for land use mapping, NDVI analysis, and change detection.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <i class="fas fa-drafting-compass"></i>
+                    <h3>Surveying & CAD</h3>
+                    <p>High-precision field surveying with Total Station, GPS/GNSS, and AutoCAD Civil 3D modeling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Actions -->
+    <div class="floating-actions">
+        <a href="Roshan_Mandal_CV.pdf" download class="floating-cv" title="Download CV">
+            <i class="fas fa-file-download"></i>
+        </a>
+        <div class="back-to-top" id="back-to-top" title="Back to Top">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

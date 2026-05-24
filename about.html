@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Roshan Mandal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .personal-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .info-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
+        .interests-section {
+            margin-top: 60px;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .interest-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s;
+        }
+
+        .interest-card:hover {
+            transform: scale(1.05);
+        }
+
+        .interest-card i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .social-links {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .profile-circle {
+            width: 100%;
+            max-width: 350px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 8px solid var(--card-bg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+        }
+
+        .profile-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 868px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container section" style="padding-top: 120px;">
+        <div class="about-grid">
+            <div class="about-image fade-in">
+                <div class="profile-circle">
+                    <img src="images/profile.jpg" alt="Roshan Mandal">
+                </div>
+            </div>
+            <div class="about-text fade-in">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">About Me</h2>
+                <p>I am a dedicated <strong>Geomatics Engineering student</strong> with a deep fascination for spatial
+                    data and its applications in solving real-world problems. My journey in this field has been driven
+                    by a passion for GIS, remote sensing, and precision surveying.</p>
+                <p style="margin-top: 1rem;">Whether it's analyzing satellite imagery to track environmental changes or
+                    conducting field surveys to ensure accuracy in land administration, I thrive on the challenges that
+                    spatial science presents. I am constantly learning new technologies and methodologies to stay at the
+                    forefront of this rapidly evolving industry.</p>
+
+                <div class="personal-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>saptari district, Nepal</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Bachelor of Geomatics Engineering, Kathmandu University</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>roshanmandal770408@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-globe"></i>
+                        <span>English, Nepali and Maithali</span>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/roshan-mandal-8577aa366" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="interests-section">
+            <div class="section-title fade-in">
+                <h2>My Interests</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="interests-grid">
+                <div class="interest-card fade-in">
+                    <i class="fas fa-map"></i>
+                    <p>Cartography</p>
+                </div>
+                <div class="interest-card fade-in">
+                    <i class="fas fa-helicopter"></i>
+                    <p>Drone Mapping</p>
+                </div>
+                <div class="interest-card fade-in">
+                    <i class="fas fa-satellite-dish"></i>
+                    <p>Satellite Imagery</p>
+                </div>
+                <div class="interest-card fade-in">
+                    <i class="fas fa-landmark"></i>
+                    <p>Land Administration</p>
+                </div>
+                <div class="interest-card fade-in">
+                    <i class="fas fa-globe-americas"></i>
+                    <p>Geodesy</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Actions -->
+    <div class="floating-actions">
+        <a href="Roshan_Mandal_CV.pdf" download class="floating-cv" title="Download CV">
+            <i class="fas fa-file-download"></i>
+        </a>
+        <div class="back-to-top" id="back-to-top" title="Back to Top">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
